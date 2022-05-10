@@ -32,7 +32,7 @@ class TestHDF5Handler(unittest.TestCase):
         self.path = os.path.join(DATA_PATH, 'dwd_test_data.hdf5')
         self.file_handler = open(self.path, mode='rb')
         self.data_handler = DWDHDF5Handler(self.file_handler)
-        self.date = datetime.datetime(2017, 11, 6, 0, 10, 3, tzinfo=pytz.UTC)
+        self.date = datetime.datetime(2022, 5, 8, 10, 55, 4, tzinfo=pytz.UTC)
 
     def tearDown(self):
         self.file_handler.close()
@@ -220,20 +220,20 @@ class TestHDF5Handler(unittest.TestCase):
         self.assertIsInstance(returned_da, xr.DataArray)
 
     def test_get_dataarray_from_node_sets_metadata_from_node(self):
-        node = self.data_handler.file['dataset1']['data2']
+        node = self.data_handler.file['dataset1']['data1']
         metadata = self.data_handler._get_metadata_from_node(node)
         returned_da = self.data_handler._get_dataarray_from_node(node)
         self.assertDictEqual(returned_da.attrs, metadata)
 
     def test_get_dataarray_from_node_sets_data_from_data(self):
-        node = self.data_handler.file['dataset1']['data3']
+        node = self.data_handler.file['dataset1']['data1']
         metadata = self.data_handler._get_metadata_from_node(node)
         data = np.array(node['data']) * metadata['gain'] + metadata['offset']
         returned_da = self.data_handler._get_dataarray_from_node(node)
         np.testing.assert_equal(returned_da.values, data)
 
     def test_get_dataarray_from_node_sets_name_to_quantity(self):
-        node = self.data_handler.file['dataset1']['data4']
+        node = self.data_handler.file['dataset1']['data1']
         metadata = self.data_handler._get_metadata_from_node(node)
         returned_da = self.data_handler._get_dataarray_from_node(node)
         self.assertEqual(returned_da.name, metadata['quantity'])
@@ -251,7 +251,7 @@ class TestHDF5Handler(unittest.TestCase):
         np.testing.assert_equal(returned_da.values, data)
 
     def test_get_dataarray_from_node_returns_right_dataarray(self):
-        node = self.data_handler.file['dataset1']['data4']
+        node = self.data_handler.file['dataset1']['data1']
         metadata = self.data_handler._get_metadata_from_node(node)
         data = np.array(node['data']) * metadata['gain'] + metadata['offset']
         right_da = xr.DataArray(data, attrs=metadata, name=metadata['quantity'])
