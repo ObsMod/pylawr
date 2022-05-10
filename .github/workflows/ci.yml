@@ -51,3 +51,10 @@ jobs:
       run: |
         python -m coverage run --source=pylawr -m unittest
         python -m coverage report
+        python -m coverage xml -o ./coverage.xml
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        fail_ci_if_error: false
+        files: ./coverage.xml
+        flags: unittests
