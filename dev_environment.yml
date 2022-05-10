@@ -1,0 +1,24 @@
+name: pylawr-dev
+channels:
+- conda-forge
+dependencies:
+- coverage
+- setuptools
+- ipython
+- netcdf4
+- pip
+- python
+- xarray
+- numpy
+- scipy
+- matplotlib
+- cartopy
+- h5py
+- scikit-learn
+- scikit-image
+- wradlib
+- requests
+- sphinx
+- sphinx-book-theme
+- sphinx-gallery 
+- sphinxcontrib-bibtex

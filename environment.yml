@@ -1,0 +1,20 @@
+name: pylawr
+channels:
+- conda-forge
+dependencies:
+- coverage
+- setuptools
+- ipython
+- netcdf4
+- pip
+- python
+- xarray
+- numpy
+- scipy
+- matplotlib
+- cartopy
+- h5py
+- scikit-learn
+- scikit-image
+- wradlib
+- requests
