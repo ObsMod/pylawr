@@ -1,7 +1,17 @@
 version: 2
 
+build:
+  os: "ubuntu-20.04"
+  tools:
+    python: "mambaforge-4.10"
+
 conda:
     environment: dev_environment.yml
+
+python:
+  install:
+    - method: pip
+      path: .
 
 sphinx:
   builder: html
