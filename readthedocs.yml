@@ -5,4 +5,4 @@ conda:
 
 sphinx:
   builder: html
-  configuration: source/conf.py
+  configuration: docs/source/conf.py
