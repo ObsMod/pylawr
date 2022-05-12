@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 ## Authors
 
-* Finn Burgemeister
-* Tobias Sebastian Finn
-* Yann Büchau
-* Maximilian Schaper
+* [Finn Burgemeister](https://github.com/fiburg)
+* [Tobias Sebastian Finn](https://github.com/tobifinn)
+* [Yann Büchau](https://github.com/nobodyinperson)
+* [Maximilian Schaper](https://github.com/fontibon)
