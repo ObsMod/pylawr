@@ -95,6 +95,6 @@ naming_convention = OrderedDict(
     },
     noise_level={
         'long_name': 'noise level',
-        'units': 'mm**6/m**3/r**2'
+        'units': 'mm**6/m**3/m**2'
     },
 )
