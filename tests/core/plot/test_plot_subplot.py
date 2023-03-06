@@ -12,7 +12,7 @@ from copy import deepcopy
 import cartopy.crs as ccrs
 from cartopy.mpl.geoaxes import GeoAxes
 
-import matplotlib.axes._subplots as mpl_subplots
+import matplotlib.axes._axes as mpl_subplots
 import matplotlib.gridspec as mpl_gridspec
 import matplotlib.figure as mpl_figure
 
@@ -189,7 +189,7 @@ class TestSubplot(unittest.TestCase):
     def test_getattr_uses_methods_from_ax(self):
         figure = mpl_figure.Figure()
         self.subplot.new_axes(figure, 111)
-        with patch('matplotlib.axes._subplots.Axes.set_frame_on') as p:
+        with patch('matplotlib.axes._axes.Axes.set_frame_on') as p:
             self.subplot.set_frame_on(False)
             p.assert_called_once_with(False)
 
@@ -212,7 +212,7 @@ class TestSubplot(unittest.TestCase):
 
     def test_new_axes_sets_default_tick_params(self):
         figure = mpl_figure.Figure()
-        with patch('matplotlib.axes._subplots.Axes.tick_params') as p:
+        with patch('matplotlib.axes._axes.Axes.tick_params') as p:
             self.subplot.new_axes(figure, 111)
             p.assert_called_with(**default_tick_params)
 

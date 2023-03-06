@@ -30,7 +30,7 @@ import collections.abc
 import cartopy.crs as ccrs
 from cartopy.mpl import geoaxes
 
-import matplotlib.axes._subplots as mpl_subplots
+import matplotlib.axes._axes as mpl_subplots
 
 # Internal modules
 from pylawr.plot.layer.base import BaseLayer
