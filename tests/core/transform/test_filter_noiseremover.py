@@ -330,8 +330,10 @@ class TestNoiseRemoverQuantitatively(NoiseRemoverTest):
     def test_remembrance_interval_returns_time_obj_as_pd_datetime(self):
         time_obj = datetime.datetime.now()
         start_date, end_date = self.f._get_remembrance_interval(time_obj)
-        self.assertIsInstance(start_date, pd.datetime)
-        self.assertIsInstance(end_date, pd.datetime)
+        self.assertIsInstance(start_date, datetime.datetime)
+        self.assertIsInstance(start_date, pd.Timestamp)
+        self.assertIsInstance(end_date, datetime.datetime)
+        self.assertIsInstance(end_date, pd.Timestamp)
         self.assertEqual(pd.to_datetime(time_obj), end_date)
 
     def test_prune_thresholds_prunes_thresholds(self):
