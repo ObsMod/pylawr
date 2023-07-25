@@ -4,19 +4,19 @@ Attenuation
 Especially at short wavelengths, reflectivity measurements, e.g. at X- and
 K-bands, are significantly attenuated by liquid water along their paths, while
 attenuation at S-Band is practically negligible :cite:`lengfeld2014`.
-To retrieve the intrinsic reflectivity attenuation corrections have to be
-applied. For this purpose we provide two procedures, a single radar and a dual
+To retrieve the intrinsic reflectivity, attenuation corrections have to be
+applied. For this purpose, we provide two procedures, a single radar and a dual
 radar attenuation correction.
 
 Single radar attenuation correction
 -----------------------------------
 The single radar attenuation correction is a gate-by-gate correction developed
 by :cite:`kramer2008` and :cite:`jacobi2016` based on the iterative estimation
-of A(Z) relationships. For this application we can simply integrate
-wradlib_ into our package with
+of the relation between specific attenuation and the radar reflectivity.
+For this application, we can simply integrate wradlib_ into our package with
 :py:func:`wradlib.atten.correct_attenuation_constrained`, which calculates the
 path integrated attenuation. :cite:`jacobi2016` evaluated this attenuation
-correction for a C-band weather radar of the german weather service (DWD). The
+correction for C-band weather radars of the german weather service (DWD). The
 parameters are i.a. wavelength dependent. We tuned the parameters for
 C-band and for X-band by ourselves using micro rain radar (MRR) measurements
 of multiple years covering 10252 fit values following
@@ -72,8 +72,8 @@ The dual radar attenuation correction
 attenuation based on the maximum apparent attenuation comparing reflectivities
 of attenuation-influenced frequency bands (X-band) and observations from less
 attenuated radar systems (C-band) :cite:`lengfeld2016`.
-The reflectivites have to be on the same grid.
-One approach is to interpolate the reflectivites on a joint coarse grid,
+The reflectivities have to be on the same grid.
+One approach is to interpolate the reflectivities on a joint coarse grid,
 estimate the attenuation and interpolate the attenuation on the fine grid of
 the attenuation-influenced frequency band.
 
@@ -87,11 +87,11 @@ attenuation :math:`K_{\mathrm{max}}` (dB) is used:
 
 The attenuation should increase with increasing distance in theory. To get
 an increasing attenuation some regression is applied on
-:math:`K_{\mathrm{max}}`, e.g. the isotonic regression. For further information
-look up Lengfeld et. al (2016) :cite:`lengfeld2016`. Note that the correction is
+:math:`K_{\mathrm{max}}`, e.g. the isotonic regression. For further information,
+refer to :cite:`lengfeld2016`. Note that the correction is
 only applied where the attenuated reflectivity is available, otherwise it would
 be possible that a reflectivity is created due to e.g. different radar
-resoultion or incorrect alignment.
+resolution or incorrect alignment.
 
 The application of the dual attenuation correction by low-level-api is shown
 below with the attenuated reflectivity ``refl_attenuated`` (e.g. X-band) and
@@ -141,7 +141,7 @@ the robust reflectivity ``refl_robust`` (e.g. C-band), both are type of
 
 Functional API
 --------------
-For functional-api usage you have to distinguish between single and dual
+For functional-api usage, you have to distinguish between single and dual
 attenuation correction:
 
 * **Single radar attenuation correction**:

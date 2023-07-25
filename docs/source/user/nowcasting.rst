@@ -18,8 +18,8 @@ using template matching (:py:func:`skimage.feature.match_template`).
 The template matching finds similar areas between
 two fields, for further information see
 `Template Matching of scikit-image <http://scikit-image.org/docs/dev/auto_examples/features_detection/plot_template.html>`_.
-Based on the distance between similar pixels a vector of pixel
-movement between to time steps is calculated. With the vector the current
+Based on the distance between similar pixels, a vector of pixel
+movement between two time steps is calculated. With the vector, the current
 field can be shifted to a field of a following time step.
 
 The :py:class:`~pylawr.transform.temporal.Extrapolator` tags
@@ -29,12 +29,12 @@ which indicates that an extrapolation was applied.
 
 .. note::
 
-    Please note the extrapolation is only defined for reflectivities on a
+    Please note, the extrapolation is only defined for reflectivities on a
     :py:class:`~pylawr.grid.CartesianGrid`.
 
 Some example for low-level API application is shown below. Two C-band
 measurements of with different timestamps (five minutes difference)
-are used to extrapolate the latest measurement to 30 seconds in future.
+are used to extrapolate the latest measurement to 30 seconds in the future.
 
 .. code-block:: python
 
@@ -69,15 +69,18 @@ The functional API can be used for simplified handling of the
 :py:mod:`~pylawr.transform.temporal.Extrapolator` within this
 :py:mod:`pylawr` package.
 
-The online processing requires to fit an extrapolator with given reflectivity
-and a path to old reflectivity, which is implemented within
+The online processing requires a fitted
+:py:mod:`~pylawr.transform.temporal.Extrapolator` with given reflectivity
+and a path to the previous reflectivity field, which is implemented within
 :py:func:`~pylawr.functions.fit.fit_extrapolator`.
 
 When processing weather radar data offline the past and future is known, it's
-possible to fit an extrapolator for temporal interpolation between two given
+possible to fit an :py:mod:`~pylawr.transform.temporal.Extrapolator
+for temporal interpolation between two given
 arrays, which is implemented within
 :py:func:`~pylawr.functions.fit.extrapolate_offline`.
-The extrapolator is applied to both fields and then the weighted average is
+The :py:mod:`~pylawr.transform.temporal.Extrapolator is applied to both fields
+and then the weighted average is
 returned as extrapolated field. The weights are based on a linear dynamics
 assumptions and anti-proportional from array time to the interpolation time.
 

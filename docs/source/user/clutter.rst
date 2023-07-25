@@ -6,15 +6,15 @@ according to effects of non-meteorological echoes (Clutter).
 Clutter is characterised by high reflectivity values and is
 caused by static objects, e.g. trees and houses, or moving objects, e.g. insects
 and plains. It varies from time step to time step and from range gate to range
-gate. For further general information see :cite:`lengfeld2014`.
+gate. For further general information, see :cite:`lengfeld2014`.
 
 Concept
 -------
 
-:py:class:`~pylawr.transform.filter.clutterfilter.ClutterFilter` calculates a map based on the filters
-mathematic attributes. For example the :py:class:`~pylawr.transform.filter.TDBZFilter`
+:py:class:`~pylawr.transform.filter.clutterfilter.ClutterFilter` calculates a map based on the filter's
+mathematic attributes. For example, the :py:class:`~pylawr.transform.filter.TDBZFilter`
 computes the average of the squared logarithmic reflectivity difference between
-adjacent range gates. Based on the computed map and filter specific thresholds
+adjacent range gates. Based on the computed map and filter specific thresholds,
 a :py:class:`~pylawr.transform.filter.ClutterMap` is created, which classifies if the radar
 signal is clutter or not in the range gate. Back to the example of our
 :py:class:`~pylawr.transform.filter.TDBZFilter`, if the mean of squared reflectivity
@@ -35,8 +35,8 @@ reflectivity. Several algorithms are applied to identify clutter signals and
 interferences. To combine the results of several
 :py:class:`~pylawr.transform.filter.clutterfilter.ClutterFilter`, use the
 :py:class:`~pylawr.transform.filter.ClutterMap`. You can set a fuzzy threshold, which is a
-relative value to the number of clutter maps, which indicate clutter, to fulfill
-clutter condition. Note, if you apply more than one
+relative value to the number of clutter maps, which indicate clutter, to fulfil
+the clutter condition. Note, if you apply more than one
 :py:class:`~pylawr.transform.filter.clutterfilter.ClutterFilter` of same type, add some name
 extension with the parameter `add_name`, otherwise you would overwrite one
 clutter map with the append function (see below).
@@ -62,14 +62,15 @@ clutter map with the append function (see below).
 
 Filter algorithms
 -----------------
-In the following you can find the implemented clutter filter algorithms.
+In the following, you can find the implemented clutter filter algorithms.
 
 TDBZ filter
 ^^^^^^^^^^^
 This filter calculates the texture of the logarithmic reflectivity (TDBZ)
 according to Hubbert et al. (2009) :cite:`hubbert2009` modified to 1D
-computations. The TDBZ field is computed as the average of the squared
-logarithmic reflectivity difference between adjacent range gates:
+computations following :cite:`lengfeld2014`. The TDBZ field is computed as
+the mean of the squared logarithmic reflectivity difference between adjacent
+range gates:
 
 .. math::
     \mathrm{TDBZ} = \left[ \sum_{i}^{N} (\mathrm{dBZ}_{i} -
@@ -88,7 +89,7 @@ SPIN filter
 This filter calculates SPIN change of the reflectivity according to
 Hubbert et al. (2009) :cite:`hubbert2009` modified to 1D computations. The SPIN
 field is a measure of how often the reflectivity gradient changes sign along the
-radial direction, with following conditions:
+radial direction, with the following conditions:
 
 .. math::
     \mathrm{sign}\left(X_i - X_{i-1}\right) =
@@ -116,7 +117,7 @@ the gate satisfies the first condition for clutter detection. If this condition
 is fulfilled for a certain percentage of consecutive range gates within a
 window, the gate is identified as clutter. Summarized, the following conditions
 need to be fulfilled for a percentage of e.g. :math:`50\,\%` within a window of
-e.g. eleven consecutive range gates, with a theshold of :math:`3\,\mathrm{dBZ}`
+e.g. eleven consecutive range gates, with a threshold of :math:`3\,\mathrm{dBZ}`
 and with a spike width :math:`W` of one:
 
 .. math::
@@ -144,7 +145,7 @@ to the spike filter, but is defined for range gates instead of beams.
 Summarized, the conditions of the :ref:`Spike filter` are with the index for
 different ranges and need to be fulfilled
 for a percentage of e.g. :math:`50\,\%` within a window of e.g. eleven
-consecutive radar beams with a theshold of
+consecutive radar beams with a threshold of
 :math:`3\,\mathrm{dBZ}` and with a ring width :math:`W` of one.
 
 We recommend to use two ring filters with a ring with of one and two to
@@ -186,7 +187,7 @@ this rain pixel is identified as clutter:
 
 Using external filters
 ^^^^^^^^^^^^^^^^^^^^^^
-:py:mod:`pylawr` package is able to integrate external filters. For example the
+:py:mod:`pylawr` package is able to integrate external filters. For example, the
 clutter filter by Gabella et. al (2002) :cite:`gabella2002` is an integration
 of wradlib_. We use :py:func:`wradlib.clutter.filter_gabella` to detect clutter
 signals, see example below. For further information read wradlib_ documentation.
@@ -207,7 +208,7 @@ signals, see example below. For further information read wradlib_ documentation.
 Functional API
 --------------
 
-For functional-api usage please note the methods
+For functional-api usage, please note the methods
 :py:func:`~pylawr.functions.transform.remove_clutter_lawr` and
 :py:func:`~pylawr.functions.transform.remove_clutter_dwd`. The clutter detection
 methods are tuned for the different radar types.

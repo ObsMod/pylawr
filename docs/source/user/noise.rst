@@ -3,7 +3,7 @@ Noise
 
 Reflectivity measurements are disturbed by noise from internal electrical
 circuits used in the receiver chain and by atmospheric noise from outside the
-system :cite:`lengfeld2014`. To be able to dectect also weak weather signals an
+system :cite:`lengfeld2014`. To be able to detect also weak weather signals, an
 accurate background noise estimation is crucial.
 
 Beam Expansion
@@ -11,7 +11,7 @@ Beam Expansion
 In contrast to the received signal, the signal of background noise is
 independent of the distance to the radar. To estimate the noise level we need
 to apply the beam expansion effect, more precisely we have to invert the
-preprocessed :math:`r^2`-dependency of the background noise. For this purpose
+preprocessed :math:`r^2`-dependency of the background noise. For this purpose,
 the :py:mod:`pylawr` package provides the class
 :py:class:`~pylawr.transform.spatial.BeamExpansion`. This filter applies or
 removes the beam expansion effect to or from a reflectivity field. The
@@ -46,9 +46,9 @@ the 10th percentile of the original reflectivity field is chosen as the next
 noise level. If this condition is not fulfilled, the noise level from the last
 time step is kept. The estimated noise level is used as the initial guess for
 the noise estimation in the next time step. To reduce influence of radar
-artefacts on the algorithm, the average of the recent 10 estimates is used to
+artefacts on the algorithm, the average of the recent 10 estimates are used to
 correct the reflectivity. Note the beam expansion before and after noise
-removal (:ref:`Beam Expansion`). For additional information please see
+removal (:ref:`Beam Expansion`). For additional information, refer to
 :cite:`lengfeld2014`.
 
 Two tags come with the class
@@ -91,7 +91,7 @@ The application of the filter is exemplary shown below.
 Functional API
 --------------
 
-For functional-api usage please note the method
+For functional-api usage, please note the method
 :py:func:`~pylawr.functions.transform.remove_noise`. The method removes
 background noise by taking an instance of a
 :py:class:`~pylawr.transform.temporal.NoiseRemover` and the radar field. The

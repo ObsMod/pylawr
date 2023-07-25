@@ -12,7 +12,7 @@ Additionally the low-cost single polarised X-band weather radars require more ef
 in preprocessing more background noise and clutter remains in the measurements
 compared to professional weather radar systems. All in all the :py:mod:`pylawr`
 package provides missing implementations, e.g. for online processing and flexible
-plotting routines. Nonetheless we want use benefits from both packages. Wradlib
+plotting routines. Nonetheless, we want to use the benefits from both packages. Wradlib
 provides suitable algorithms for clutter detection
 (see :ref:`Using external filters`) and attenuation correction
 (see :ref:`Single radar attenuation correction`),

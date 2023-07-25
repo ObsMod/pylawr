@@ -12,7 +12,7 @@ nationwide C-band radar networks. The products are shown at the
 
 .. note:: The latest version of :py:mod:`pylawr` package is an alpha version, as
     well as this documentation, so please report any unstable behavior, code
-    errors or misspelling. Thank you! Keep in mind the syntax can change
+    errors or misspelling. Thank you! Keep in mind, the syntax can change
     drastically for increasing version/path number.
 
 Read the following documentation to find solutions how to process radar data to

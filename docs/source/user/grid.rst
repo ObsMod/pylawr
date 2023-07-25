@@ -88,7 +88,7 @@ other grids.
 
 :py:func:`~pylawr.functions.grid.get_latlon_grid` translates the latitude and
 longitude coordinates of any given grid into a rectangular
-:py:class:`~pylawr.grid.LatLonGrid` and infers automatically teh settings of
+:py:class:`~pylawr.grid.LatLonGrid` and infers automatically the settings of
 this rectangular grid.
 
 A similar function is :py:func:`~pylawr.functions.grid.get_cartesian`,

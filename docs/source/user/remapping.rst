@@ -1,9 +1,9 @@
 Remapping
 =========
-This remapping subpackage is designed to remap (in the following interpolation
+This remapping subpackage is designed to remap (in the following, interpolation
 is used as synonym) data between different grids (see also :ref:`grid`).
 These remappers have all a common interface and are only different in their
-remapping algorithms. Remapping is implemented via two-step procedure:
+remapping algorithms. Remapping is implemented via a two-step procedure:
 
 1. `fit` – The remapper is fitted to remap from a source grid to a target grid.
 2. `transform` – The fitted remapper transforms given radar data to the target grid.
@@ -16,7 +16,7 @@ This is done in local cartesian space spanned by the source coordinates.
 Nearest-neighbor remapping
 --------------------------
 The simplest tree-based method is nearest neighbors interpolation.
-In this nearest neighbor interpolation the median of the `n`-nearest neighbors
+In this nearest neighbor interpolation, the median of the `n`-nearest neighbors
 is used as interpolated value.
 This interpolation is commonly used for interpolations from or to polar grids to
 other grids.
@@ -43,7 +43,7 @@ distance-depending.
 For this, we implement an additional submodule allowing a wide range of different
 kernels, which transforms a given distance matrix into a covariance matrix with
 a set of pre-defined non-linear functions (see also :ref:`Kriging kernels`).
-An interpolated point is then an weighted average of the source points with the
+An interpolated point is then a weighted average of the source points with the
 weights depending on given covariance matrix.
 
 In normal kriging, one would use all available points, but for radar meteorology
@@ -59,13 +59,13 @@ types of kriging are currently implemented.
 The most simple case is simple kriging.
 Here, we assume that the expectation is known, stationary and already subtracted
 from the data.
-In our case, we estimate the expectation as local mean of the `n`-nearest
+In our case, we estimate the expectation as the local mean of the `n`-nearest
 neighbors.
 This type of kriging is also called Gaussian Process and is used for machine
 learning :cite:`rasmussen2006`.
 
-In ordinary kriging, we only assume that the expectation is stationary and it
-has to be estimate by kriging.
+In ordinary kriging, we only assume that the expectation is stationary, and it
+has to be estimated by kriging.
 Further, we constrain the weights of the nearest neighbors to unity.
 This form of kriging is therefore the most used form for geostatistical
 interpolation.
@@ -117,7 +117,7 @@ composed kernels, which are commonly used for kriging or gaussian processes.
 The Gaussian radial basis function kernel
 (:py:class:`~pylawr.remap.kernel.gaussian_rbf`) is an universal kernel
 :cite:`micchelli2006` and one of the most used kernel for Gaussian processes.
-In its behaviour it can emulate almost any available function and is also called
+In its behaviour, it can emulate almost any available function and is also called
 Gaussian variogram in geostatistical literature.
 The length scale of the RBF kernel specifies the decorrelation length (also
 called range), while the standard deviation corresponds to the height of the

@@ -35,15 +35,15 @@ There are also convenience functions :py:func:`~pylawr.field.tag_array`, :py:fun
 Array conversion
 ----------------
 
-The accessor has also some additional methods to convert the :py:class:`~pylawr.RadarField`
+The accessor also has some additional methods to convert the :py:class:`~pylawr.RadarField`
 into another variable.
 
 It is possible to convert the reflectivity to rain rate
 and vice versa (with *inverse=True*) with the :py:meth:`~pylawr.RadarField.zr_convert()` method. If no
-arguments are given then the normal Z/R relationship is assumed. To convert from
+arguments are given, then the normal Z/R relationship is assumed. To convert from
 `decibel` units into linear units and vice versa, the
 :py:meth:`~pylawr.RadarField.db_to_linear`
-method can be used. With the :py:meth:`~pylawr.RadarField.to_z()` method the radar field can be converted
+method can be used. With the :py:meth:`~pylawr.RadarField.to_z()` method, the radar field can be converted
 into linear reflectivity for any set radar variable (e.g. decibel rain rate).
 The :py:meth:`~pylawr.RadarField.to_dbz()` method allows to convert the radar field into reflectivity
 with `dBZ` as unit.

@@ -13,7 +13,7 @@ the file. Some file types, e.g. ``.txt`` or ``.hdf5``, make implementations of
 :py:class:`~pylawr.datahandler.base.DataHandler` necessary.
 
 * The :py:class:`~pylawr.datahandler.LawrHandler` is constructed to read in LAWR text
-  files, computed by online raw data processing. The file handler in the
+  files, computed by online raw data processing. The file handler, in the
   example below, is a filelike object, which needs to be open
   (for further information see `io — Core tools for working with streams
   <https://docs.python.org/3/library/io.html>`_).
@@ -60,7 +60,7 @@ our :py:mod:`pylawr` package, which does not need big effort.
 .. code-block:: python
 
     dataset = xr.open_dataset(file_path, engine='netcdf4')
-    reflectivity = dataset['reflectivity']
+    reflectivity = dataset['dbz']
     reflectivity = reflectivity.lawr.set_grid_coordinates(PolarGrid)
 
 The following example deals with loading a netCDF file written and processed by
@@ -86,7 +86,7 @@ our :ref:`Naming Conventions`.
         dims=['time', 'azimuth', 'range'],
         attrs=attrs)
 
-    read_refl = read_refl.lawr.set_variable('reflectivity')
+    read_refl = read_refl.lawr.set_variable('dbz')
 
     read_refl.lawr.add_tag(TAG_BEAM_EXPANSION_CORR)
 
@@ -106,7 +106,7 @@ Functional API
 
 The :py:mod:`pylawr` package simplifies the input of all common file types in
 this project. Our X-Band data is commonly distributed in ascii-data
-(online) and netCDF format. Unfortunately there are more than one netCDF file
+(online) and netCDF format. Unfortunately, there are more than one netCDF file
 standards from our radar software, because of older software versions.
 The DWD C-Band data is commonly in HDF5 format.
 The functions take an opened file or a file path and a grid suitable for the

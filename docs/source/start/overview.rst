@@ -3,13 +3,13 @@ Overview
 Hamburg's python package for weather radar processing - :py:mod:`pylawr` - is a
 product of own algorithms and other products. The goal is to produce reliable
 and accurate estimates of precipitation based on noisy and cluttered
-measurements.
+radar measurements.
 
 Measurements
 ------------
 The origin of this package is the project Precipitation and Attenuation
 Estimates from a High-Resolution Weather Radar Network (PATTERN).
-For now the Meteorological Institute of the University Hamburg operates several
+For now, the Meteorological Institute of the Universität Hamburg operates two
 low-cost local area weather radars (LAWR) in the region of Hamburg. These single
 polarized X-band radars observing precipitation with following specifications
 :cite:`lengfeld2014`.

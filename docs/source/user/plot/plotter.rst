@@ -1,5 +1,5 @@
 The :py:class:`~pylawr.plot.Plotter` exists to simplify the composition and
-use of any :any:`pylawr.plot.layer`. As such it allows for the handling of any
+use of any :any:`pylawr.plot.layer`. As such, it allows for the handling of any
 :any:`matplotlib.pyplot.figure` or :any:`matplotlib.pyplot.axis`
 related setting.
 
@@ -14,11 +14,11 @@ via the :py:attr:`~pylawr.plot.Plotter.gridspec` and
 :py:attr:`~pylawr.plot.plotter.gridspec_slices` attributes
 (and respective initialisation parameters).
 
-After changing the composition or the **projection** of a axis was changed, one
+After changing the composition or the **projection** of an axis was changed, one
 has to reset the :py:attr:`~pylawr.plot.Plotter.ax_dict`
 to create a new figure and ax-handles. This is done by calling the
 :py:meth:`~pylawr.plot.Plotter.setup_new_axis_dict`.
-If only a specific axis was changed the
+If only a specific axis was changed, the
 :py:meth:`~pylawr.plot.Plotter.setup_axis`
 method can be used.
 
@@ -28,7 +28,7 @@ A few figure parameters can be set via the
 Ax_settings attribute
 ^^^^^^^^^^^^^^^^^^^^^
 
-Additional parameters during the initilalisation of the
+Additional parameters during the initialisation of the
 :py:class:`~pylawr.plot.Plotter` will be added to
 :py:attr:`~pylawr.plot.Plotter.ax_settings`.
 Some of them are used to change the figure. The possible keys are:
@@ -43,14 +43,19 @@ Some of them are used to change the figure. The possible keys are:
 - **extent_projection** specifying the projection of the used data
   (default :any:`cartopy.crs.PlateCarree`)
 
-**NOTE** additional keys will be ignored.
+.. note::
 
-**NOTE** entries will only be added to
-:py:attr:`~pylawr.plot.Plotter.ax_settings`.
-In order to reset the settings to the default ones, one has to use:
+    Additional keys will be ignored.
+
+.. note::
+    Entries will only be added to
+    :py:attr:`~pylawr.plot.Plotter.ax_settings`.
+    In order to reset the settings to the default ones, one has to use:
+
 .. code-block:: python
 
     plotter.ax_settings = None
+
 
 Handling axes
 ^^^^^^^^^^^^^

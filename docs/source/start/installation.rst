@@ -48,29 +48,21 @@ The following block lists the required dependencies.
 
 .. code-block:: none
 
-    cartopy
     coverage
-    gdal
-    geos
-    hdf5
-    ipython
-    json-c
-    libnetcdf
-    matplotlib
-    netcdf4
-    paramiko
-    pip
-    poppler
-    proj4
-    pyproj
-    python
-    pytz
-    pyyaml
-    requests
     setuptools
-    scikit-image
-    scikit-learn
-    wradlib
+    ipython
+    netcdf4
+    python
     xarray
     numpy
     scipy
+    pandas
+    matplotlib
+    six
+    h5py
+    pytz
+    scikit-learn
+    scikit-image
+    cartopy
+    wradlib
+    requests

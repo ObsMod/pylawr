@@ -1,9 +1,9 @@
 Plotting
 ========
-This Section will cover all the details neccessary to use the plotting utilities
+This section will cover all the details necessary to use the plotting utilities
 of the :py:mod:`pylawr` module. In addition to the described options, every aspect
 of a plot might be adjusted via unmentioned alteration of the default settings.
-Plotting in splitted up into two main parts – plotter and layers.
+Plotting is seperated in two main parts – plotter and layers.
 
 The plotter is used as main object to handle a complete plot with its figure and
 subplots.
@@ -48,7 +48,7 @@ The raw reflectivity data can be plotted with default header and colorbar
 information (:py:func:`~pylawr.functions.plot.plot_reflectivity`).
 The rain rate can be similarly plotted
 (:py:func:`~pylawr.functions.plot.plot_rain_rate`).
-Further the rain rate and a clutter map can be combined with two different
+Further, the rain rate and a clutter map can be combined with two different
 color maps to show results from clutter detection
 (:py:func:`~pylawr.functions.plot.plot_rain_clutter`).
 

@@ -21,7 +21,7 @@ could have several tuning parameters.
 These tuning parameters can be time-depending and have to be inferred from
 current radar data.
 Often maximum likelihood training is used for this task, but in an operational
-radar settings this method is to expensive.
+radar settings this method is too expensive.
 Here, we treat the tuning parameters as unknown state, which should be inferred
 from radar data.
 As inference algorithm, we use a sequential importance resampling particle
@@ -118,7 +118,7 @@ avoid a degenerated ensemble.
 These steps are similar to evolutionary algorithms such that the fittest
 ensemble members survive, while ensemble members with small weights die.
 
-In the following a special form of particle filtering called sequential
+In the following, a special form of particle filtering called sequential
 importance resampling particle filter are explained.
 
 Sequential importance resampling (SIR) particle filter
@@ -215,7 +215,7 @@ which are cyclical repeated:
 
 Implementations
 ---------------
-In theory this inference submodule can be used to infer different unknown
+In theory, this inference submodule can be used to infer different unknown
 parameters and states.
 One needs only to implement an observation operator, a propagation model and
 the observational likelihood to start with inference.
@@ -224,7 +224,7 @@ implemented at the moment.
 These implementations are as simple as possible and can be seen as some type of
 boilerplate to increase the possibilities for experimentation.
 
-The interface for all operators is the same as they need to be callable with
+The interface for all operators is the same, as they need to be callable with
 arbitrary keyword arguments.
 Every inference algorithm has a ``fit``-method, where all additional keyword
 arguments are passed to these functions.
@@ -241,7 +241,7 @@ Every additional argument, e.g. the observational distance, has to be given as
 arbitrary and additional keyword argument to the ``fit``-method of the inference
 algorithm.
 
-As only observation operator a kernel variogram
+As only observation operator, a kernel variogram
 (:py:func:`~pylawr.transform.inference.KernelVariogram`) is implemented.
 A kernel is set within the observation operator, which is then evaluated as
 theoretical variogram with given tuning parameters on given observation

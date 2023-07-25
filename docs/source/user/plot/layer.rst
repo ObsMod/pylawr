@@ -8,18 +8,20 @@ Base layer
 
 The :py:class:`~pylawr.plot.layer.BaseLayer` introduces the
 default settings for all layers. The settings contain plot options as well as
-some additional parameters specifying the aspects and specific settigns
+some additional parameters specifying the aspects and specific settings
 (if necessary).
 
-Some of those parameter are used as kwarguments for specific plot functions.
-Those parameter are specified by the name of the plot function
+Some of those parameters are used as kwarguments for specific plot functions.
+Those parameters are specified by the name of the plot function
 for example *pcolormesh*.
 
 More settings can be added or changed by calling the *settings*
 attribute of any given layer.
 
-**NOTE** if one wants to restore the default
-settings, the *settings* attribute has to be set to ``None``.
+.. note::
+
+    If one wants to restore the default
+    settings, the *settings* attribute has to be set to ``None``.
 
 
 Header layer
@@ -32,11 +34,11 @@ attribute which is
 This attribute contains the information that will be displayed within
 the header. There are three keys necessary for this dictionary:
 
-- ``title`` containg the title string
-- ``left`` containg a dictionary with *key/value* pairs which wil be displayed
-  each within a seperate line on the lower left side
-- ``right`` containg a dictionary with *key/value* pairs which wil be displayed
-  each within a seperate line on the lower right side
+- ``title`` contains the title string
+- ``left`` contains a dictionary with *key/value* pairs which will be displayed
+  each within a separate line on the lower left side
+- ``right`` contains a dictionary with *key/value* pairs which will be displayed
+  each within a separate line on the lower right side
 
 The default
 :py:attr:`~pylawr.plot.layer.LawrHeaderLayer.header_info`
@@ -49,7 +51,7 @@ This :py:class:`~pylawr.plot.layer.BackgroundLayer` adds
 a background map to an axis with a projection.
 The map is based on :py:class:`~cartopy.io.img_tiles.OSM`.
 A default resolution is specified within the
-:py:attr:`~pylawr.plot.layer.BaseLayer.settings` attibute.
+:py:attr:`~pylawr.plot.layer.BaseLayer.settings` attribute.
 
 **MISSING** an initialisation stage, which is not jet implemented.
 
@@ -64,7 +66,7 @@ or an additional grid has to be provided for the given data.
 The plot-object resulting out of the call to *pcolormesh* is stored within the
 *plot_stroe* attribute of the
 :py:class:`~pylawr.plot.layer.RadarFieldLayer`.
-Thereby it is possible to reference the plot-object for the creation
+Thereby, it is possible to reference the plot-object for the creation
 of a colorbar.
 
 Colorbar layer
@@ -75,12 +77,13 @@ matching a given :py:class:`~pylawr.plot.layer.RadarFieldLayer`.
 The reference to the corresponding plot-object handle will be made internally.
 
 The positioning of the colorbar is adjusted by some parameters set within the
-:py:attr:`~pylawr.plot.layer.BaseLayer.settings` attibute.
+:py:attr:`~pylawr.plot.layer.BaseLayer.settings` attribute.
 
-**NOTE** the only important thing is, that the
-:py:class:`~pylawr.plot.layer.ColorbarLayer` is plotted after the
-corresponding :py:class:`~pylawr.plot.layer.RadarFieldLayer`.
-So that the plot-object reference does exist.
+.. note::
+    The only important thing is, that the
+    :py:class:`~pylawr.plot.layer.ColorbarLayer` is plotted after the
+    corresponding :py:class:`~pylawr.plot.layer.RadarFieldLayer`.
+    So that the plot-object reference does exist.
 
 Removing a layer
 ^^^^^^^^^^^^^^^^
